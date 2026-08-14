@@ -2,343 +2,545 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="2-day Amigo's Staycation itinerary for August 22–23, 2026 in Timan, Liloy, Zamboanga del Norte." />
-  <title>Amigo's Staycation | August 22–23, 2026</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0B3934" />
+  <meta name="description" content="SAKADINGDINGDONG — our private barkada trip to Amigo's Staycation, Timan, Liloy. Aug 22–23, 2026. Beach. BBQ. Bonfire. Pool. Chaos. Repeat." />
+  <title>SAKADINGDINGDONG · The Timan Escape · Aug 22–23, 2026</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="#home">AMIGO'S <span>STAYCATION</span></a>
-    <nav class="nav">
-      <a href="#itinerary">Itinerary</a>
-      <a href="#meals">Meals</a>
-      <a href="#activities">Activities</a>
-      <a href="#stay">The Stay</a>
-    </nav>
-    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+
+  <!-- ============================================================
+       INTRO / SPLASH — cinematic ocean entrance
+       ============================================================ -->
+  <div class="intro" id="intro" aria-label="Welcome screen">
+    <div class="intro__bg" aria-hidden="true"></div>
+    <div class="intro__glow" aria-hidden="true"></div>
+    <div class="intro__particles" id="introParticles" aria-hidden="true"></div>
+
+    <div class="intro__inner">
+      <p class="intro__eyebrow">A private barkada invitation</p>
+      <h1 class="intro__title" id="introTitle" data-text="SAKADINGDINGDONG">SAKADINGDINGDONG</h1>
+      <p class="intro__date">August 22–23, 2026</p>
+      <p class="intro__place">Timan, Liloy</p>
+
+      <button class="enter-btn" id="enterBtn" aria-label="Enter the site">
+        <span class="enter-btn__label">ENTER THE KALAT</span>
+        <span class="enter-btn__wave" aria-hidden="true"></span>
+      </button>
+      <p class="intro__rotator" id="introRotator" aria-live="polite">Walay atrasan.</p>
+    </div>
+  </div>
+
+  <!-- Full-screen wave transition canvas -->
+  <canvas class="wave-canvas" id="waveCanvas" aria-hidden="true"></canvas>
+
+  <!-- ============================================================
+       TOP NAV (desktop)
+       ============================================================ -->
+  <header class="topnav" id="topnav">
+    <div class="topnav__inner">
+      <button class="brand" id="brand" aria-label="SAKADINGDINGDONG home">
+        <span class="brand__mark" aria-hidden="true">🏖️</span>
+        <span class="brand__text">SAKADINGDINGDONG</span>
+      </button>
+      <nav class="topnav__links" aria-label="Primary">
+        <a href="#home" class="topnav__link" data-scroll>Home</a>
+        <a href="#itinerary" class="topnav__link" data-scroll>Itinerary</a>
+        <a href="#food" class="topnav__link" data-scroll>Food</a>
+        <a href="#activities" class="topnav__link" data-scroll>Activities</a>
+        <a href="#stay" class="topnav__link" data-scroll>The Stay</a>
+        <a href="#packing" class="topnav__link" data-scroll>Packing</a>
+      </nav>
+      <button class="btn btn--sm btn--primary topnav__rsvp" data-open-rsvp>RSVP</button>
+    </div>
   </header>
 
-  <main>
+  <!-- ============================================================
+       MAIN SITE
+       ============================================================ -->
+  <main id="site">
+
+    <!-- ---------------- HERO / HOME ---------------- -->
     <section class="hero" id="home">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <div class="eyebrow">August 22–23, 2026 • 13–14 guests</div>
-        <h1>Two days by the sea.<br><span>One easy plan.</span></h1>
-        <p>
-          A relaxed overnight stay in Timan, Liloy with swimming, beach activities,
-          sunset, barbecue, bonfire, and a slow morning by the water.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#itinerary">See Itinerary</a>
-          <a class="btn btn-glass" href="#meals">View Meals</a>
-        </div>
-        <div class="hero-meta">
-          <div><strong>₱6,999</strong><span>Stay package</span></div>
-          <div><strong>2 Days</strong><span>1 Night</span></div>
-          <div><strong>Timan</strong><span>Liloy, ZDN</span></div>
-        </div>
-      </div>
-      <a class="scroll-cue" href="#itinerary" aria-label="Scroll to itinerary">↓</a>
-    </section>
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__blob hero__blob--1" aria-hidden="true"></div>
+      <div class="hero__blob hero__blob--2" aria-hidden="true"></div>
 
-    <section class="section intro" id="itinerary">
-      <div class="section-heading">
-        <div>
-          <span class="kicker">THE PLAN</span>
-          <h2>Your 2-Day Itinerary</h2>
-        </div>
-        <p>Enough structure to keep the trip smooth, with plenty of time to relax.</p>
-      </div>
+      <div class="hero__content">
+        <p class="hero__label stagger" data-s="1">The Timan Escape</p>
+        <h2 class="hero__title stagger" data-s="2">SAKADINGDINGDONG</h2>
 
-      <div class="day-tabs">
-        <button class="day-tab active" data-day="day1">Day 1 · Aug 22</button>
-        <button class="day-tab" data-day="day2">Day 2 · Aug 23</button>
-      </div>
-
-      <div class="timeline active" id="day1">
-        <article class="timeline-item">
-          <div class="time">12:00 PM</div>
-          <div class="dot"></div>
-          <div class="event">
-            <span class="tag">ARRIVAL</span>
-            <h3>Check-in & Settle In</h3>
-            <p>Unload, choose sleeping areas, chill drinks, and get everyone comfortable.</p>
-          </div>
-        </article>
-        <article class="timeline-item">
-          <div class="time">12:30 PM</div>
-          <div class="dot"></div>
-          <div class="event">
-            <span class="tag">LUNCH</span>
-            <h3>Easy First Meal</h3>
-            <p>Chicken adobo, rice, vegetables, fruit, and cold drinks. Prep the adobo before the trip.</p>
-          </div>
-        </article>
-        <article class="timeline-item">
-          <div class="time">1:30 PM</div>
-          <div class="dot"></div>
-          <div class="event">
-            <span class="tag">CHILL</span>
-            <h3>Pool & Free Time</h3>
-            <p>Swim, take photos, relax, or explore the property.</p>
-          </div>
-        </article>
-        <article class="timeline-item">
-          <div class="time">2:30 PM</div>
-          <div class="dot"></div>
-          <div class="event">
-            <span class="tag">ACTIVITY</span>
-            <h3>Beach Adventure Block</h3>
-            <p>ATV, kayaking, snorkeling, surfing, skimboarding, or beach volleyball.</p>
-          </div>
-        </article>
-        <article class="timeline-item featured">
-          <div class="time">5:30 PM</div>
-          <div class="dot"></div>
-          <div class="event">
-            <span class="tag">GOLDEN HOUR</span>
-            <h3>Sunset & Group Photos</h3>
-            <p>Meet back at the beach for group photos before dinner.</p>
-          </div>
-        </article>
-        <article class="timeline-item">
-          <div class="time">6:30 PM</div>
-          <div class="dot"></div>
-          <div class="event">
-            <span class="tag">DINNER</span>
-            <h3>BBQ Night</h3>
-            <p>Grilled pork, chicken, hotdogs, rice, vegetables, fruit, and drinks.</p>
-          </div>
-        </article>
-        <article class="timeline-item">
-          <div class="time">8:00 PM</div>
-          <div class="dot"></div>
-          <div class="event">
-            <span class="tag">NIGHT</span>
-            <h3>Bonfire, Games & Open Bar Area</h3>
-            <p>Music, cards, snacks, marshmallows, stories, and a slow night by the beach.</p>
-          </div>
-        </article>
-      </div>
-
-      <div class="timeline" id="day2">
-        <article class="timeline-item">
-          <div class="time">6:30 AM</div>
-          <div class="dot"></div>
-          <div class="event">
-            <span class="tag">MORNING</span>
-            <h3>Beach Walk & Morning Swim</h3>
-            <p>Start easy with fresh air, coffee, photos, or a quick dip.</p>
-          </div>
-        </article>
-        <article class="timeline-item">
-          <div class="time">7:30 AM</div>
-          <div class="dot"></div>
-          <div class="event">
-            <span class="tag">BREAKFAST</span>
-            <h3>Filipino Breakfast</h3>
-            <p>Eggs, longganisa or hotdogs, garlic rice, bread, coffee, Milo, juice, and fruit.</p>
-          </div>
-        </article>
-        <article class="timeline-item">
-          <div class="time">9:00 AM</div>
-          <div class="dot"></div>
-          <div class="event">
-            <span class="tag">ROUND 2</span>
-            <h3>Last Activity Session</h3>
-            <p>Do the activity you missed on Day 1, or just enjoy the pool and beach.</p>
-          </div>
-        </article>
-        <article class="timeline-item">
-          <div class="time">10:30 AM</div>
-          <div class="dot"></div>
-          <div class="event">
-            <span class="tag">PACK</span>
-            <h3>Pack & Clean Up</h3>
-            <p>Organize bags, shower, check chargers, clean shared areas, and prepare for lunch.</p>
-          </div>
-        </article>
-        <article class="timeline-item featured">
-          <div class="time">11:30 AM</div>
-          <div class="dot"></div>
-          <div class="event">
-            <span class="tag">FINAL MEAL</span>
-            <h3>Pancit & Leftover BBQ Lunch</h3>
-            <p>Use remaining food, add pancit, and finish with fruit and cold drinks.</p>
-          </div>
-        </article>
-        <article class="timeline-item">
-          <div class="time">12:30 PM</div>
-          <div class="dot"></div>
-          <div class="event">
-            <span class="tag">WRAP-UP</span>
-            <h3>Final Photos & Check-out</h3>
-            <p>Take one final group photo and leave based on the resort's confirmed check-out time.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="photo-break">
-      <div class="photo-break-overlay"></div>
-      <div>
-        <span class="kicker light">PHASE 2</span>
-        <h2>Premium Staycation Experience</h2>
-        <p>Private space, pool, kitchen, Wi-Fi, family room, capsule room, and easy access to beach activities.</p>
-      </div>
-    </section>
-
-    <section class="section" id="meals">
-      <div class="section-heading">
-        <div>
-          <span class="kicker">FOOD PLAN</span>
-          <h2>Meals for 13–14 People</h2>
-        </div>
-        <p>Simple food that works for a group and does not keep anyone in the kitchen all day.</p>
-      </div>
-
-      <div class="meal-grid">
-        <article class="meal-card">
-          <div class="meal-number">01</div>
-          <div>
-            <span>DAY 1 · LUNCH</span>
-            <h3>Chicken Adobo Lunch</h3>
-            <p>Adobo, steamed rice, vegetables, fruit, juice, and soft drinks.</p>
-          </div>
-        </article>
-        <article class="meal-card">
-          <div class="meal-number">02</div>
-          <div>
-            <span>DAY 1 · SNACKS</span>
-            <h3>Beach Snacks</h3>
-            <p>Chips, bread or sandwiches, fruit, biscuits, water, and cold drinks.</p>
-          </div>
-        </article>
-        <article class="meal-card accent">
-          <div class="meal-number">03</div>
-          <div>
-            <span>DAY 1 · DINNER</span>
-            <h3>BBQ Night</h3>
-            <p>Pork barbecue, grilled chicken, hotdogs, rice, vegetables, and fruit.</p>
-          </div>
-        </article>
-        <article class="meal-card">
-          <div class="meal-number">04</div>
-          <div>
-            <span>DAY 2 · BREAKFAST</span>
-            <h3>Big Breakfast</h3>
-            <p>Eggs, longganisa or hotdogs, garlic rice, bread, coffee, Milo, juice, and fruit.</p>
-          </div>
-        </article>
-        <article class="meal-card">
-          <div class="meal-number">05</div>
-          <div>
-            <span>DAY 2 · LUNCH</span>
-            <h3>Pancit + Leftovers</h3>
-            <p>Pancit, remaining BBQ, rice, fruit, and drinks before check-out.</p>
-          </div>
-        </article>
-      </div>
-
-      <div class="shopping-card">
-        <div>
-          <span class="kicker">QUICK SHOPPING GUIDE</span>
-          <h3>Suggested quantities</h3>
-        </div>
-        <div class="shopping-grid">
-          <p><strong>8 kg</strong> Rice</p>
-          <p><strong>5 kg</strong> Chicken</p>
-          <p><strong>4 kg</strong> Pork</p>
-          <p><strong>2 kg</strong> Hotdogs / Longganisa</p>
-          <p><strong>30 pcs</strong> Eggs</p>
-          <p><strong>40–50 L</strong> Drinking water</p>
-          <p><strong>5–6</strong> Large soft drinks</p>
-          <p><strong>4–6 bags</strong> Ice</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section dark-section" id="activities">
-      <div class="section-heading light-heading">
-        <div>
-          <span class="kicker light">PICK YOUR FUN</span>
-          <h2>Activities</h2>
-        </div>
-        <p>Mix free activities with paid options so everyone can choose their own pace.</p>
-      </div>
-
-      <div class="activity-grid">
-        <article><span>🏍️</span><h3>ATV Riding</h3><p>Best before drinking and while everyone is fresh.</p></article>
-        <article><span>🛶</span><h3>Kayaking</h3><p>An easy afternoon activity for pairs or small groups.</p></article>
-        <article><span>🤿</span><h3>Snorkeling</h3><p>Confirm equipment rental and sea conditions first.</p></article>
-        <article><span>🏄</span><h3>Surfing</h3><p>Ask if boards and beginner assistance are available.</p></article>
-        <article><span>🏐</span><h3>Beach Volleyball</h3><p>Free use and perfect for the full group.</p></article>
-        <article><span>🔥</span><h3>Bonfire</h3><p>Save this for after dinner with music and snacks.</p></article>
-      </div>
-    </section>
-
-    <section class="section stay-section" id="stay">
-      <div class="stay-copy">
-        <span class="kicker">THE STAY</span>
-        <h2>Everything included in Phase 2</h2>
-        <ul class="feature-list">
-          <li>One big air-conditioned family room</li>
-          <li>Swimming pool</li>
-          <li>Open bar area</li>
-          <li>Male and female comfort rooms</li>
-          <li>Complete kitchen utensils</li>
-          <li>Outdoor shower area</li>
-          <li>Pressurized water supply</li>
-          <li>Free Wi-Fi</li>
-          <li>Capsule room</li>
+        <ul class="hero__meta stagger" data-s="3">
+          <li>Aug 22–23, 2026</li>
+          <li>13–14 people</li>
+          <li>Amigo's Staycation</li>
         </ul>
-        <div class="stay-actions">
-          <a class="btn btn-primary" href="tel:09177203314">Call 0917-720-3314</a>
-          <a class="btn btn-outline" href="https://facebook.com/AmigosStaycation" target="_blank" rel="noopener">Open Facebook</a>
+
+        <p class="hero__tag stagger" data-s="3">Two Days. One Barkada. Unlimited Chika.</p>
+        <p class="hero__sub stagger" data-s="4">Beach. BBQ. Bonfire. Pool. Chaos. Repeat.</p>
+
+        <!-- countdown -->
+        <div class="countdown stagger" data-s="4" id="countdownTop" aria-label="Countdown to August 22, 2026">
+          <div class="cd"><span class="cd__num" data-cd="days">00</span><span class="cd__lbl">Days</span></div>
+          <div class="cd"><span class="cd__num" data-cd="hours">00</span><span class="cd__lbl">Hours</span></div>
+          <div class="cd"><span class="cd__num" data-cd="mins">00</span><span class="cd__lbl">Mins</span></div>
+          <div class="cd"><span class="cd__num" data-cd="secs">00</span><span class="cd__lbl">Secs</span></div>
         </div>
+
+        <div class="hero__cta stagger" data-s="5">
+          <a href="#itinerary" class="btn btn--primary btn--lg" data-scroll>See Our Itinerary</a>
+          <button class="btn btn--glass btn--lg btn--rsvp" data-open-rsvp>
+            RSVP Now <span class="btn__ping" aria-hidden="true"></span>
+          </button>
+        </div>
+        <p class="hero__note stagger" data-s="5">RSVP responsibly. Walay atrasan.</p>
       </div>
-      <div class="poster-wrap">
-        <img src="assets/amigos-poster.png" alt="Amigo's Staycation Phase 2 promotional poster">
+
+      <a href="#itinerary" class="hero__scroll" data-scroll aria-label="Scroll down"><span></span></a>
+    </section>
+
+    <!-- ---------------- ITINERARY ---------------- -->
+    <section class="section itinerary" id="itinerary">
+      <div class="wrap">
+        <header class="shead reveal">
+          <p class="shead__tag">Day by day</p>
+          <h2 class="shead__title">Operation Sakadingdingdong</h2>
+          <p class="shead__sub">Our very serious itinerary.</p>
+        </header>
+
+        <div class="tabs reveal" role="tablist" aria-label="Trip days">
+          <button class="tab is-active" role="tab" aria-selected="true" aria-controls="day1" id="tab-day1" data-tab="day1">
+            <span class="tab__d">Day 1</span><span class="tab__dt">August 22</span>
+          </button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="day2" id="tab-day2" data-tab="day2" tabindex="-1">
+            <span class="tab__d">Day 2</span><span class="tab__dt">August 23</span>
+          </button>
+        </div>
+
+        <!-- DAY 1 -->
+        <div class="timeline" id="day1" role="tabpanel" aria-labelledby="tab-day1">
+          <article class="tl reveal" data-cat="arrive">
+            <div class="tl__time">12:00 PM</div>
+            <div class="tl__card tilt"><span class="tl__ic">🛬</span>
+              <h3>Arrival <em>· Touchdown Timan</em></h3>
+              <p>Check in, unload bags, choose sleeping spots, chill drinks, and inspect the place like we own it.</p>
+            </div>
+          </article>
+          <article class="tl reveal" data-cat="food">
+            <div class="tl__time">12:30 PM</div>
+            <div class="tl__card tilt"><span class="tl__ic">🍗</span>
+              <h3>Lunch <em>· Kaon Before Anything Else</em></h3>
+              <ul class="chips"><li>Chicken adobo</li><li>Rice</li><li>Vegetables</li><li>Fruit</li><li>Juice</li><li>Soft drinks</li></ul>
+            </div>
+          </article>
+          <article class="tl reveal" data-cat="water">
+            <div class="tl__time">1:30 PM</div>
+            <div class="tl__card tilt"><span class="tl__ic">🏊</span>
+              <h3>Pool Time <em>· First Official Kalat</em></h3>
+              <ul class="chips"><li>Swimming</li><li>Photos</li><li>Tambay</li><li>Explore the place</li></ul>
+            </div>
+          </article>
+          <article class="tl reveal" data-cat="play">
+            <div class="tl__time">2:30 PM</div>
+            <div class="tl__card tilt"><span class="tl__ic">🤺</span>
+              <h3>Activities <em>· Choose Your Fighter</em></h3>
+              <ul class="chips"><li>ATV</li><li>Kayaking</li><li>Snorkeling</li><li>Surfing</li><li>Skimboarding</li><li>Beach Volleyball</li></ul>
+            </div>
+          </article>
+          <article class="tl reveal" data-cat="play">
+            <div class="tl__time">4:30 PM</div>
+            <div class="tl__card tilt"><span class="tl__ic">🌴</span>
+              <h3>Free Time <em>· Bahala Na Mo</em></h3>
+              <ul class="chips"><li>Pool</li><li>Beach</li><li>Volleyball</li><li>Photos</li><li>Tambay</li></ul>
+            </div>
+          </article>
+          <article class="tl reveal" data-cat="sunset">
+            <div class="tl__time">5:30 PM</div>
+            <div class="tl__card tilt"><span class="tl__ic">🌅</span>
+              <h3>Sunset <em>· Mandatory Barkada Picture</em></h3>
+              <p>Everyone meets near the beach. Group photos, solo photos, couple photos if applicable, fake candid photos, profile picture material.</p>
+            </div>
+          </article>
+          <article class="tl reveal" data-cat="food">
+            <div class="tl__time">6:30 PM</div>
+            <div class="tl__card tilt"><span class="tl__ic">🍖</span>
+              <h3>Dinner <em>· BBQ Before the Chaos</em></h3>
+              <ul class="chips"><li>Grilled pork</li><li>Grilled chicken</li><li>Hotdogs</li><li>Rice</li><li>Vegetables</li><li>Fruit</li><li>Drinks</li></ul>
+            </div>
+          </article>
+          <article class="tl reveal" data-cat="night">
+            <div class="tl__time">8:00 PM</div>
+            <div class="tl__card tilt"><span class="tl__ic">🔥</span>
+              <h3>Bonfire <em>· Chika Starts Here</em></h3>
+              <ul class="chips"><li>Music</li><li>Cards</li><li>Games</li><li>Marshmallows</li><li>Snacks</li><li>Drinks</li><li>Stories</li><li>Random life updates</li></ul>
+            </div>
+          </article>
+          <article class="tl reveal" data-cat="night">
+            <div class="tl__time">10:00 PM onward</div>
+            <div class="tl__card tilt"><span class="tl__ic">🌙</span>
+              <h3>Walay Curfew</h3>
+              <ul class="chips"><li>Pool</li><li>Open bar area</li><li>Music</li><li>Games</li><li>Chika</li><li>Sleep</li><li>Or whatever happens</li></ul>
+            </div>
+          </article>
+        </div>
+
+        <!-- DAY 2 -->
+        <div class="timeline is-hidden" id="day2" role="tabpanel" aria-labelledby="tab-day2" hidden>
+          <article class="tl reveal" data-cat="water">
+            <div class="tl__time">6:30 AM</div>
+            <div class="tl__card tilt"><span class="tl__ic">🌊</span>
+              <h3>Morning <em>· For Those Who Actually Wake Up</em></h3>
+              <ul class="chips"><li>Beach walk</li><li>Morning swim</li><li>Sunrise</li><li>Coffee</li><li>Photos</li></ul>
+            </div>
+          </article>
+          <article class="tl reveal" data-cat="food">
+            <div class="tl__time">7:30 AM</div>
+            <div class="tl__card tilt"><span class="tl__ic">🍳</span>
+              <h3>Breakfast <em>· Recovery Meal</em></h3>
+              <ul class="chips"><li>Eggs</li><li>Longganisa or hotdogs</li><li>Garlic rice</li><li>Bread</li><li>Coffee</li><li>Milo</li><li>Juice</li><li>Fruit</li></ul>
+            </div>
+          </article>
+          <article class="tl reveal" data-cat="play">
+            <div class="tl__time">9:00 AM</div>
+            <div class="tl__card tilt"><span class="tl__ic">🏄</span>
+              <h3>Activity Round 2 <em>· Last Chance</em></h3>
+              <p>Do whatever activity you missed yesterday. Or stay in the pool. Or sleep. No judgment.</p>
+            </div>
+          </article>
+          <article class="tl reveal" data-cat="arrive">
+            <div class="tl__time">10:30 AM</div>
+            <div class="tl__card tilt"><span class="tl__ic">🧳</span>
+              <h3>Packing <em>· Reality Is Coming</em></h3>
+              <p>Pack bags. Shower. Find missing chargers. Check bathrooms. Clean shared areas.</p>
+            </div>
+          </article>
+          <article class="tl reveal" data-cat="food">
+            <div class="tl__time">11:30 AM</div>
+            <div class="tl__card tilt"><span class="tl__ic">🍜</span>
+              <h3>Lunch <em>· Last Supper, Timan Edition</em></h3>
+              <ul class="chips"><li>Pancit</li><li>Remaining BBQ</li><li>Rice</li><li>Fruit</li><li>Drinks</li></ul>
+            </div>
+          </article>
+          <article class="tl reveal" data-cat="sunset">
+            <div class="tl__time">12:30 PM</div>
+            <div class="tl__card tilt"><span class="tl__ic">📸</span>
+              <h3>Final Photo <em>· One Last Picture Before Reality</em></h3>
+              <p>Group photo. Final cleanup. Checkout based on confirmed resort time.</p>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section checklist-section">
-      <div class="section-heading">
-        <div>
-          <span class="kicker">BEFORE YOU GO</span>
-          <h2>Confirm these first</h2>
+    <!-- ---------------- MEALS / FOOD ---------------- -->
+    <section class="section food" id="food">
+      <div class="wrap">
+        <header class="shead reveal">
+          <p class="shead__tag">Priorities</p>
+          <h2 class="shead__title">Very Important Business: Food</h2>
+          <p class="shead__sub">No one gets hangry.</p>
+        </header>
+        <div class="mgrid">
+          <article class="mcard tilt reveal"><div class="mcard__tag">Day 1 · Lunch</div><h3>Chicken Adobo Lunch</h3><ul><li>Adobo</li><li>Rice</li><li>Vegetables</li><li>Fruit</li><li>Cold drinks</li></ul></article>
+          <article class="mcard tilt reveal"><div class="mcard__tag">Day 1 · Snacks</div><h3>Merienda Kalat</h3><ul><li>Chips</li><li>Bread</li><li>Sandwiches</li><li>Fruit</li><li>Biscuits</li><li>Cold drinks</li></ul></article>
+          <article class="mcard tilt reveal"><div class="mcard__tag">Day 1 · Dinner</div><h3>BBQ Night</h3><ul><li>Pork</li><li>Chicken</li><li>Hotdogs</li><li>Rice</li><li>Vegetables</li><li>Fruit</li></ul></article>
+          <article class="mcard tilt reveal"><div class="mcard__tag">Day 2 · Breakfast</div><h3>Recovery Meal</h3><ul><li>Eggs</li><li>Longganisa</li><li>Hotdogs</li><li>Garlic rice</li><li>Bread</li><li>Coffee</li><li>Milo</li><li>Juice</li><li>Fruit</li></ul></article>
+          <article class="mcard tilt reveal"><div class="mcard__tag">Day 2 · Lunch</div><h3>Last Supper, Timan Edition</h3><ul><li>Pancit</li><li>Leftover BBQ</li><li>Rice</li><li>Fruit</li><li>Drinks</li></ul></article>
         </div>
-      </div>
-      <div class="check-grid">
-        <div>✓ Check-in and check-out time</div>
-        <div>✓ Exact activity prices</div>
-        <div>✓ Towels and toiletries</div>
-        <div>✓ Cooking gas and grill setup</div>
-        <div>✓ Outside food and drinks policy</div>
-        <div>✓ Bonfire and firewood fee</div>
-        <div>✓ Life jackets and equipment</div>
-        <div>✓ Weather / cancellation policy</div>
       </div>
     </section>
 
-    <section class="cta">
-      <div>
-        <span class="kicker light">AUGUST 22–23</span>
-        <h2>Pack light. Eat well. Enjoy the beach.</h2>
-        <p>Timan, Liloy, Zamboanga del Norte</p>
+    <!-- ---------------- SHOPPING ---------------- -->
+    <section class="section shopping" id="shopping">
+      <div class="wrap">
+        <header class="shead reveal">
+          <p class="shead__tag">Grocery mission</p>
+          <h2 class="shead__title">The Sakadingdingdong Grocery Mission</h2>
+          <p class="shead__sub">Tap an item to cycle: Not Bought → Bought → Assigned. Eat first. Problems later.</p>
+        </header>
+        <div class="shop" id="shopList"><!-- injected by JS --></div>
+        <p class="shop__legend reveal">
+          <span class="dot dot--no"></span> Not bought
+          <span class="dot dot--yes"></span> Bought
+          <span class="dot dot--ass"></span> Assigned
+        </p>
       </div>
-      <a class="btn btn-white" href="#itinerary">Back to Itinerary</a>
     </section>
+
+    <!-- ---------------- ACTIVITIES ---------------- -->
+    <section class="section activities" id="activities">
+      <div class="wrap">
+        <header class="shead reveal">
+          <p class="shead__tag shead__tag--light">Pick your poison</p>
+          <h2 class="shead__title">Choose Your Fighter</h2>
+          <p class="shead__sub">Tap "I'm In" to count yourself. Some rates need confirming with Amigo's.</p>
+        </header>
+        <div class="agrid" id="actList"><!-- injected by JS --></div>
+        <p class="safety reveal"><span aria-hidden="true">🛟</span> Friendly Sakadingdingdong reminder: if you've been drinking, skip the ATV and water activities.</p>
+      </div>
+    </section>
+
+    <!-- ---------------- THE STAY ---------------- -->
+    <section class="section stay" id="stay">
+      <div class="wrap">
+        <header class="shead reveal">
+          <p class="shead__tag">Basecamp</p>
+          <h2 class="shead__title">Our Headquarters</h2>
+          <p class="shead__sub">Phase 2 Premium Staycation · Amigo's, Timan.</p>
+        </header>
+        <div class="stay__grid">
+          <ul class="features reveal">
+            <li><span>❄️</span>One big air-conditioned family room</li>
+            <li><span>🏊</span>Swimming pool</li>
+            <li><span>🍹</span>Open bar area</li>
+            <li><span>🚻</span>Male &amp; female comfort rooms</li>
+            <li><span>🍴</span>Complete kitchen utensils</li>
+            <li><span>🚿</span>Outdoor shower area</li>
+            <li><span>💧</span>Pressurized water supply</li>
+            <li><span>📶</span>Free Wi-Fi</li>
+            <li><span>🛏️</span>Capsule room</li>
+          </ul>
+          <aside class="polaroid polaroid--poster tilt reveal">
+            <div class="poster">
+              <p class="poster__brand">Amigo's Staycation</p>
+              <p class="poster__phase">Phase 2 · Premium</p>
+              <div class="poster__price"><span>₱</span>6,999</div>
+              <p class="poster__unit">Overnight stay</p>
+              <div class="poster__line"></div>
+              <ul class="poster__meta"><li><strong>Up to 20</strong><span>Max pax</span></li><li><strong>13–14</strong><span>Us</span></li><li><strong>2D/1N</strong><span>Stay</span></li></ul>
+              <p class="poster__where">Timan, Liloy · Zamboanga del Norte</p>
+            </div>
+            <span class="polaroid__cap">Our HQ 🏝️</span>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------- PHOTOS ---------------- -->
+    <section class="section photos" id="photos">
+      <div class="wrap">
+        <header class="shead reveal">
+          <p class="shead__tag">Evidence</p>
+          <h2 class="shead__title">Proof We Were Here</h2>
+          <p class="shead__sub">Photos coming August 22. Tap a polaroid to bring it forward.</p>
+        </header>
+        <div class="pwall">
+          <figure class="polaroid pw tilt reveal"><div class="pw__ph">📷</div><figcaption>Sunset squad</figcaption></figure>
+          <figure class="polaroid pw tilt reveal"><div class="pw__ph">🏝️</div><figcaption>Beach kalat</figcaption></figure>
+          <figure class="polaroid pw tilt reveal"><div class="pw__ph">🔥</div><figcaption>Bonfire chika</figcaption></figure>
+          <figure class="polaroid pw tilt reveal"><div class="pw__ph">🏊</div><figcaption>Pool chaos</figcaption></figure>
+          <figure class="polaroid pw tilt reveal"><div class="pw__ph">🍖</div><figcaption>BBQ night</figcaption></figure>
+          <figure class="polaroid pw tilt reveal"><div class="pw__ph">🤙</div><figcaption>The barkada</figcaption></figure>
+        </div>
+        <p class="photos__note reveal">Coming August 22 — replace these with the real ones after the trip.</p>
+      </div>
+    </section>
+
+    <!-- ---------------- PACKING ---------------- -->
+    <section class="section packing" id="packing">
+      <div class="wrap">
+        <header class="shead reveal">
+          <p class="shead__tag">Your bag</p>
+          <h2 class="shead__title">Things You'll Regret Forgetting</h2>
+          <p class="shead__sub">Your personal list — saved on this phone. Pack your charger. Seriously.</p>
+        </header>
+        <div class="checklist" id="packList"><!-- injected by JS --></div>
+        <button class="btn btn--ghost btn--sm reveal" id="resetPack">Reset My Checklist</button>
+      </div>
+    </section>
+
+    <!-- ---------------- BEFORE WE GO ---------------- -->
+    <section class="section before" id="before">
+      <div class="wrap">
+        <header class="shead reveal">
+          <p class="shead__tag">Organizer zone</p>
+          <h2 class="shead__title">Things We Still Need to Confirm</h2>
+          <p class="shead__sub">Tap to mark confirmed with Amigo's.</p>
+        </header>
+        <div class="checklist" id="confirmList"><!-- injected by JS --></div>
+      </div>
+    </section>
+
+    <!-- ---------------- SECOND COUNTDOWN ---------------- -->
+    <section class="section cdblock" id="countdown2">
+      <div class="cdblock__overlay" aria-hidden="true"></div>
+      <div class="wrap cdblock__inner reveal">
+        <h2 class="cdblock__title">Until the Kalat Begins</h2>
+        <div class="countdown countdown--big" id="countdownBottom" aria-label="Countdown to August 22, 2026">
+          <div class="cd"><span class="cd__num" data-cd="days">00</span><span class="cd__lbl">Days</span></div>
+          <div class="cd"><span class="cd__num" data-cd="hours">00</span><span class="cd__lbl">Hours</span></div>
+          <div class="cd"><span class="cd__num" data-cd="mins">00</span><span class="cd__lbl">Mins</span></div>
+          <div class="cd"><span class="cd__num" data-cd="secs">00</span><span class="cd__lbl">Secs</span></div>
+        </div>
+        <p class="cdblock__note">Hydrate before you migrate.</p>
+      </div>
+    </section>
+
+    <!-- ---------------- RSVP / GUEST LIST ---------------- -->
+    <section class="section rsvp" id="rsvp">
+      <div class="wrap">
+        <header class="shead reveal">
+          <p class="shead__tag">The list</p>
+          <h2 class="shead__title">Who's Coming?</h2>
+          <p class="shead__sub">Attendance is highly encouraged. Your excuse will be reviewed by the committee.</p>
+        </header>
+
+        <div class="tally reveal" id="tally">
+          <div class="tally__item tally__item--yes"><span class="tally__n" id="cntYes">0</span><span class="tally__l">Confirmed</span></div>
+          <div class="tally__item tally__item--maybe"><span class="tally__n" id="cntMaybe">0</span><span class="tally__l">Maybe</span></div>
+          <div class="tally__item tally__item--no"><span class="tally__n" id="cntNo">0</span><span class="tally__l">Not Coming</span></div>
+        </div>
+
+        <div class="rsvp__actions reveal">
+          <button class="btn btn--primary btn--lg" data-open-rsvp id="mainRsvpBtn">RSVP Now</button>
+          <button class="btn btn--ghost btn--lg" id="editRsvpBtn" hidden>Edit My RSVP</button>
+        </div>
+
+        <div class="guests" id="guestList"><!-- injected by JS --></div>
+        <p class="guests__empty reveal" id="guestsEmpty">No one has RSVP'd yet. Be the brave first. 🫡</p>
+      </div>
+    </section>
+
+    <!-- ---------------- CONTACT ---------------- -->
+    <section class="section contact" id="contact">
+      <div class="wrap">
+        <div class="contact__card reveal">
+          <div>
+            <p class="shead__tag">Basecamp hotline</p>
+            <h2 class="shead__title">Amigo's Staycation</h2>
+            <p class="contact__line">📍 Timan, Liloy, Zamboanga del Norte</p>
+            <p class="contact__line">📞 0917-720-3314</p>
+            <p class="contact__line">💬 facebook.com/AmigosStaycation</p>
+          </div>
+          <div class="contact__btns">
+            <a href="tel:09177203314" class="btn btn--primary btn--block">Call Amigo's</a>
+            <a href="https://facebook.com/AmigosStaycation" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--block">Open Facebook</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------- FINAL CTA ---------------- -->
+    <section class="final">
+      <div class="final__overlay" aria-hidden="true"></div>
+      <div class="final__content reveal">
+        <p class="final__brand">SAKADINGDINGDONG</p>
+        <p class="final__date">August 22–23, 2026</p>
+        <h2 class="final__title">See you sa Timan.</h2>
+        <p class="final__sub">Walay atrasan.</p>
+        <div class="final__cta">
+          <button class="btn btn--primary btn--lg" data-open-rsvp>RSVP Now</button>
+          <a href="#itinerary" class="btn btn--glass btn--lg" data-scroll>Back to Itinerary</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p class="footer__brand">SAKADINGDINGDONG © 2026</p>
+      <p class="footer__note">Made for the barkada.</p>
+      <p class="footer__meta">August 22–23, 2026 · Timan, Liloy, Zamboanga del Norte</p>
+      <button class="footer__replay" id="replayIntro">↺ Replay intro</button>
+    </footer>
   </main>
 
-  <footer>
-    <div>Amigo's Staycation Trip Plan</div>
-    <div>August 22–23, 2026 · 13–14 pax</div>
-  </footer>
+  <!-- ============================================================
+       BOTTOM NAV (mobile)
+       ============================================================ -->
+  <nav class="bottomnav" id="bottomnav" aria-label="Mobile navigation">
+    <a href="#home" class="bn" data-scroll data-bn="home"><span class="bn__ic">🏠</span><span class="bn__t">Home</span></a>
+    <a href="#itinerary" class="bn" data-scroll data-bn="itinerary"><span class="bn__ic">🗺️</span><span class="bn__t">Plan</span></a>
+    <a href="#food" class="bn" data-scroll data-bn="food"><span class="bn__ic">🍖</span><span class="bn__t">Food</span></a>
+    <a href="#activities" class="bn" data-scroll data-bn="activities"><span class="bn__ic">🏄</span><span class="bn__t">Play</span></a>
+    <button class="bn bn--rsvp" data-open-rsvp data-bn="rsvp"><span class="bn__ic">✋</span><span class="bn__t">RSVP</span></button>
+  </nav>
+
+  <!-- ============================================================
+       RSVP BOTTOM SHEET / MODAL
+       ============================================================ -->
+  <div class="sheet" id="rsvpSheet" aria-hidden="true">
+    <div class="sheet__scrim" data-close-rsvp></div>
+    <div class="sheet__panel" role="dialog" aria-modal="true" aria-labelledby="rsvpHeading">
+      <div class="sheet__grab" aria-hidden="true"></div>
+      <button class="sheet__x" data-close-rsvp aria-label="Close">✕</button>
+
+      <div class="sheet__body" id="rsvpBody">
+        <h2 class="sheet__title" id="rsvpHeading">Lock in your spot 🏖️</h2>
+        <p class="sheet__sub">Walay atrasan. Fill this out para kasama ka sa listahan.</p>
+
+        <form id="rsvpForm" novalidate>
+          <label class="field">
+            <span class="field__lbl">Name</span>
+            <input type="text" name="name" required autocomplete="name" placeholder="Full name" />
+          </label>
+          <label class="field">
+            <span class="field__lbl">Nickname</span>
+            <input type="text" name="nickname" autocomplete="nickname" placeholder="What the barkada calls you" />
+          </label>
+
+          <fieldset class="field">
+            <legend class="field__lbl">Are you coming?</legend>
+            <div class="opts opts--stack">
+              <label class="opt"><input type="radio" name="coming" value="yes" required /><span>Yes, obviously.</span></label>
+              <label class="opt"><input type="radio" name="coming" value="maybe" /><span>Maybe, depende sa buhay.</span></label>
+              <label class="opt"><input type="radio" name="coming" value="no" /><span>No, traydor ako.</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="field">
+            <legend class="field__lbl">Transportation</legend>
+            <div class="opts opts--stack">
+              <label class="opt"><input type="radio" name="transpo" value="have" /><span>I have a ride</span></label>
+              <label class="opt"><input type="radio" name="transpo" value="need" /><span>I need a ride</span></label>
+              <label class="opt"><input type="radio" name="transpo" value="offer" /><span>I can take passengers</span></label>
+            </div>
+          </fieldset>
+
+          <label class="field">
+            <span class="field__lbl">Food notes <em>(optional)</em></span>
+            <input type="text" name="food" placeholder="Allergies, requests, cravings…" />
+          </label>
+
+          <fieldset class="field">
+            <legend class="field__lbl">Activity interests <em>(pick any)</em></legend>
+            <div class="opts opts--chips" id="rsvpActs">
+              <!-- chips injected by JS -->
+            </div>
+          </fieldset>
+
+          <label class="field">
+            <span class="field__lbl">Anything the group should know? <em>(optional)</em></span>
+            <textarea name="message" rows="2" placeholder="Chika, warnings, hype…"></textarea>
+          </label>
+
+          <p class="field__err" id="rsvpErr" hidden>Please add your name and pick if you're coming. 🙏</p>
+
+          <button type="submit" class="btn btn--primary btn--lg btn--block sheet__submit">Lock In My RSVP</button>
+          <button type="button" class="btn btn--text btn--block" data-close-rsvp>Cancel</button>
+        </form>
+      </div>
+
+      <div class="sheet__done" id="rsvpDone" hidden>
+        <div class="sheet__donemark">🎉</div>
+        <h2 class="sheet__title">RSVP Saved 🎉</h2>
+        <p class="sheet__sub sheet__sub--big">See you sa Timan!</p>
+        <button class="btn btn--primary btn--lg btn--block" data-close-rsvp>Back to the site</button>
+        <button class="btn btn--text btn--block" id="editAgain">Edit my RSVP</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Confetti canvas -->
+  <canvas class="confetti-canvas" id="confetti" aria-hidden="true"></canvas>
+
+  <!-- Easter egg toast -->
+  <div class="egg-toast" id="eggToast" role="status" aria-live="polite">SAKADINGDINGDONG SUPREMACY 🏖️</div>
 
   <script src="script.js"></script>
 </body>
